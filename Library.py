@@ -13,7 +13,7 @@ class Library:
             m += 1
 
     def lend_books(self, book, name):
-        if book not in [self.dict.keys()]:
+        if book not in self.dict.keys():
             if book in self.books:
                 # self.dict[book] = name
                 self.dict.update({book: name})
@@ -32,13 +32,13 @@ class Library:
         print(f"{book} is returned successfully")
 
 
+print("Welcome to Library")
+user = Library(["Rich Dad Poor Dad", "Charlie", "Quiet", "Dream Big"], "Power Your Mind")
 while True:
-    print("Welcome to Library")
     while True:
         print("Enter the options for the operation you want to do:")
         print("1.Display books \n2.Lend books\n3.Add books\nAnd press any other key Return books")
         n = input()
-        user = Library(["Rich Dad Poor Dad", "Charlie", "Quiet", "Dream Big"], "Power Your Mind")
         if n == "1":
             user.display_books()
         elif n == "2":
